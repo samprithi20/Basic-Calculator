@@ -24,9 +24,17 @@
                 console.log(expression); //for the console msg
                 if(expression){
                     try{
-                        answer = math.evaluate(expression); // eval evaluates the string expression and returns the answer
-                        document.getElementById("expression").value = answer; //display the answer in the input box
-                        addLog(expression + " = " + answer); //log the expression and answer in the log
+                        //answer = math.evaluate(expression); // eval evaluates the string expression and returns the answer
+                        //document.getElementById("expression").value = answer; //display the answer in the input box
+                        //addLog(expression + " = " + answer); //log the expression and answer in the log
+
+                        var answer = math.evaluate(expression);
+                        if (answer === Infinity || answer === -Infinity) {
+                            answer = "Cannot divide by zero";
+                        }
+                        document.getElementById("expression").value = answer;
+                        addLog(expression + " = " + answer);
+
                     } catch(e){
                         document.getElementById("expression").value = "Invalid Input"; //display error if expression is invalid
                         console.log("Bad Expression");
