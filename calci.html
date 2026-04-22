@@ -88,6 +88,98 @@
                 expression = expression.slice(0, -1); //remove the last character from the expression   
                 document.getElementById("expression").value = expression;
             }
+
+            document.addEventListener("keydown", function(event) {
+                handleKeyboardInput(event);
+            });
+
+            function handleKeyboardInput(event) {
+                const key = event.key;
+
+                // Numbers (0–9)
+                if (!isNaN(key)) {
+                    event.preventDefault();//to prevent default character entry from keybaord also from buttons
+                    input_number(key);
+                }
+
+                // Operators
+                else if (["+", "-", "*", "/"].includes(key)) {
+                    event.preventDefault();
+                    input_operator(key);
+                }
+
+                // Decimal
+                else if (key === ".") {
+                    event.preventDefault();
+                    input_number(".");
+                }
+
+                // Enter → Calculate
+                else if (key === "Enter") {
+                    event.preventDefault(); // important
+                    calculate();
+                }
+
+                // Backspace
+                else if (key === "Backspace") {
+                    event.preventDefault();
+                    backspace();
+                }
+
+                // Escape → Clear
+                else if (key === "Escape") {
+                    event.preventDefault();
+                    clear_input();
+                }
+
+                // Brackets
+                else if (key === "(" || key === ")") {
+                    event.preventDefault();
+                    input_operator(key);
+                }
+
+                // Power (^)
+                else if (key === "^") {
+                    event.preventDefault();
+                    input_operator("^");
+                }
+
+                // Square root shortcut → press 'r'
+                else if (key.toLowerCase() === "r") {
+                    event.preventDefault();
+                    input_operator("sqrt(");
+                }
+
+                // sin → press 's'
+                else if (key.toLowerCase() === "s") {
+                    event.preventDefault();
+                    input_operator("sin(");
+                }
+
+                // cos → press 'c'
+                else if (key.toLowerCase() === "c") {
+                    event.preventDefault();
+                    input_operator("cos(");
+                }
+
+                // tan → press 't'
+                else if (key.toLowerCase() === "t") {
+                    event.preventDefault();
+                    input_operator("tan(");
+                }
+
+                // log → press 'l'
+                else if (key.toLowerCase() === "l") {
+                    event.preventDefault();
+                    input_operator("log(");
+                }
+
+                // pi → press 'p'
+                else if (key.toLowerCase() === "p") {
+                    event.preventDefault();
+                    input_operator("π");
+                }
+            }
         </script>
     </head>
 
