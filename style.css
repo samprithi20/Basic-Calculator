@@ -1,7 +1,7 @@
 /* Page background */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(209, 160, 241);
+    background: linear-gradient(135deg, #eef2f3, #dfe9f3);
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -11,57 +11,97 @@ body {
 .container {
     width: 420px;
     margin: 80px auto;
-    background: rgb(209, 160, 241);
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
 }
 
 /* Heading style */
 h1 {
     text-align: center;
-    color: #333;
+    color: #2d3748;
+    margin-bottom: 20px;
 }
 
 /* Input box */
 input[type="text"] {
-    width: 70%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
     font-size: 16px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #667eea;
 }
 
 /* Button styling */
 button {
-    padding: 10px 18px;
+    padding: 10px 16px;
     border: none;
-    background-color: #667eea;
+    background-color: #4dabf7;
     color: white;
-    font-size: 16px;
-    border-radius: 8px;
+    font-size: 15px;
+    border-radius: 10px;
     cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 4px;
 }
 
+/* Button hover effect */
 button:hover {
-    background-color: #5a67d8;
+    transform: scale(1.05);
+    background-color: #339af0;
+}
+
+/* Special buttons */
+button.equal {
+    background-color: #40c057;
+}
+
+button.equal:hover {
+    background-color: #37b24d;
+}
+
+button.operator {
+    background-color: #adb5bd;
+    color: #212529;
+}
+
+button.operator:hover {
+    background-color: #868e96;
+}
+
+button.clear {
+    background-color: #fa5252;
+}
+
+button.clear:hover {
+    background-color: #e03131;
 }
 
 /* Calculation log box */
 ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 20px;
 }
 
 li {
-    background: #f3f4f7;
+    background: #f1f3f5;
     margin: 8px 0;
     padding: 10px;
-    border-radius: 6px;
+    border-radius: 8px;
+    font-size: 14px;
 }
 
 /* Error message */
 .error {
-    color: red;
+    color: #e03131;
     font-weight: bold;
+    margin-top: 10px;
 }
