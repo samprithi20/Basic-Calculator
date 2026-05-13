@@ -9,6 +9,7 @@ It supports basic arithmetic operations along with selected trigonometric functi
 * Trigonometric calculations (`sin`, `cos`, etc.)
 * Interactive button-based interface
 * Instant result display
+* History of calculations
 
 ## Technologies Used
 
